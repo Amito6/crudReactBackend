@@ -1,7 +1,7 @@
 const dotenv = require("dotenv").config();
 const express = require("express");
 const server = express();
-server.listen(8080);
+server.listen(process.env.PORT || 8080);
 
 // enable body parser
 const bodyParser = require("body-parser");
