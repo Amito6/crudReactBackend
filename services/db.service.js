@@ -1,7 +1,6 @@
 const mongo = require("mongoose");
 const registerSchema = require("../model/register.model");
-
-mongo.connect("mongodb://127.0.0.1:27017/register");
+mongo.connect(process.env.MONGO_URI);
 
 const insertData = async (data) =>{
     const dataRes = await new registerSchema(data).save();
